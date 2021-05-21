@@ -1,0 +1,17 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="false" />
+
+        <service id="isaac_gaze_symfony.controller.token" class="ISAAC\GazeSymfonyBundle\Controller\TokenController" public="true">
+            <argument type="service" id="isaac_gaze_symfony.gazepublisher" />
+        </service>
+
+        <service id="isaac_gaze_symfony.gazepublisher" class="ISAAC\GazePublisher\GazePublisher" public="true">
+            <argument type="string">%env(GAZEHUB_URL)%</argument>
+            <argument type="string">%env(GAZE_PRIVATE_KEY_CONTENTS)%</argument>
+        </service>
+    </services>
+</container>

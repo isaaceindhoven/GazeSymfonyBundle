@@ -1,0 +1,28 @@
+{
+    "name": "isaac/gazesymfonybundle",
+    "description": "Symfony Bundle for Gaze",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "require": {
+        "php": "~7.3.0||~7.4.0||~8.0.0",
+        "isaac/gaze-publisher": "^0.2.0",
+        "symfony/dependency-injection": "^4.4|^5.0",
+        "symfony/framework-bundle": "^4.4|^5.0",
+        "symfony/security-core": "^4.4|^5.0"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "ISAAC\\GazeSymfonyBundle\\": "src/"
+        }
+    },
+    "require-dev": {
+        "isaac/php-code-sniffer-standard": "^21.0",
+        "phpstan/phpstan": "^0.12.88",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-strict-rules": "^0.12.9"
+    }
+}
