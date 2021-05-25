@@ -32,12 +32,15 @@ GAZEHUB_URL="http://localhost:3333"
 
 ---
 
-In `.env.local` add the following variable:
+To store the private key in a safe way inside Symfony use the [Symfony Vault](https://symfony.com/doc/current/configuration/secrets.html). Run the following command to set the private key in a development environment:
 
-```dotenv
-GAZE_PRIVATE_KEY_CONTENTS="-----BEGIN RSA PRIVATE KEY-----
-MIIJKQIBAAKCAgEA2IAilwuZwX+wV0y9jpuhwtwNIXo6W1kocr1Dwg3sK7xNAbg8
-...
+```shell script
+bin/console secrets:set GAZE_PRIVATE_KEY_CONTENTS <PATH TO KEY OR KEY CONTENT>
 ```
 
-Add you own `private.key` contents to this file.
+To use another key on production run the following command in the production environment to override the private key:
+
+```shell script
+bin/console secrets:set GAZE_PRIVATE_KEY_CONTENTS <PATH TO KEY OR KEY CONTENT> -e prod
+bin/console secrets:decrypt-to-local --force --env=prod
+```
