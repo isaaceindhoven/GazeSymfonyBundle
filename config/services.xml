@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
@@ -10,8 +12,8 @@
         </service>
 
         <service id="isaac_gaze_symfony.gazepublisher" class="ISAAC\GazePublisher\GazePublisher" public="true">
-            <argument type="string">%env(GAZEHUB_URL)%</argument>
-            <argument type="string">%env(GAZE_PRIVATE_KEY_CONTENTS)%</argument>
+            <argument type="string"/>
+            <argument type="string"/>
         </service>
     </services>
 </container>
